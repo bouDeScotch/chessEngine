@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.square:hover {
+  border: yellow solid 5px;
+}
+.square.clicked {
+  border: red solid 5px;
+}
+
+#grid {
+  border: calc(8 * min(100vw, 100vh) / 9 / 8 / 2) solid #312f33;
+  border-radius: calc(8 * min(100vw, 100vh) / 9 / 8 / 2);
+  width: calc(8 * min(100vw, 100vh) / 9);
+  height: calc(8 * min(100vw, 100vh) / 9);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  margin: auto;
+}
+
+.white {
+  background-color: #ededee;
+}
+
+.black {
+  background-color: #8776b7;
+}
+
+/*# sourceMappingURL=style.css.map */

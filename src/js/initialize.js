@@ -1,3 +1,5 @@
+import "./dataStructures.js";
+
 // Create a 8x8 grid of squares in the document
 let grid = document.getElementById('grid');
 for (let i = 0; i < 8; i++) {

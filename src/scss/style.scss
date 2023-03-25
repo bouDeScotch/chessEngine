@@ -1,26 +1,39 @@
+@use 'sass:math';
+
 // Reset
 
 body {
   margin: 0;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 $min_v: min(100vw, 100vh);
+$size-grid: calc(8 * $min_v / 9);
+$size-square: calc($size-grid / 8);
+$border-size: calc($size-square / 2);
+
+$color-white: #ededee;
+$color-black: #8776b7;
 
 .square {
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 
   &:hover {
-    transform: scale(1.2);
-    border: 1px solid black;
+    border: yellow solid 5px;
+  }
+
+  &.clicked {
+    border: red solid 5px;
   }
 }
 
 #grid {
-  border: 5px solid black;
-  width: calc($min_v - 10px);
-  height: calc($min_v - 10px);
+  border: $border-size solid #312f33;
+  border-radius: $border-size;
+  width: $size-grid;
+  height: $size-grid;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -30,18 +43,9 @@ $min_v: min(100vw, 100vh);
 }
 
 .white {
-  background-color: white;
-
-  &:hover {
-    box-shadow: inset 0px 0px 20px 0px black;
-  }
+  background-color: $color-white;
 }
 
 .black {
-
-  background-color: black;
-
-  &:hover {
-    box-shadow: inset 0px 0px 20px 0px white;
-  }
+  background-color: $color-black;
 }
